@@ -7,7 +7,7 @@ It is not designed as a production-ready or fully optimized system.
 
 ## Repository Structure
 An overview of the repository structure is shown below:
-
+```bash
 .
 ├── main.py # Entry point for running experiments
 ├── aggregation_rules.py # Aggregation rule implementations
@@ -33,7 +33,7 @@ An overview of the repository structure is shown below:
 │ └── mycrypto/
 ├── requirements.txt # Python dependencies
 └── README.md # This file
-
+```
 Some auxiliary files and development artifacts may also be present.
 Reviewers are encouraged to focus on `main.py` and the aggregation- and shuffling-related modules for evaluation.
 
@@ -43,9 +43,11 @@ The code has been tested with the following environment:
 - PyTorch >= 1.10
 
 Dependencies can be installed via:
-
+```bash
 pip install -r requirements.txt
-Minimal Running Example
+```
+
+## Minimal Running Example
 A minimal experiment sufficient to validate the correctness and qualitative behavior of the method can be executed using the following command:
 
 ```bash
