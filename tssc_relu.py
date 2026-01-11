@@ -31,7 +31,6 @@ def tssc_relu_aggregate(
             m["seed16"] = bytes([len(rows) % 256]) * 16
         rows.append(pack_row_kplus1(m["pairs"], m["seed16"]))
 
-    # s_trust {-1,+1} → {0,1} → 16B/位
     s_bits16 = s_trust_bits16_from_pm1(s_trust.cpu().numpy())
 
   

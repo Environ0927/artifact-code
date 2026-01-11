@@ -1,11 +1,7 @@
 
 package modp
 
-// /!\ WARNING /!\
-// this code has not been audited and is provided as-is. In particular,
-// there is no security guarantees such as constant time implementation
-// or side-channel attack resistance
-// /!\ WARNING /!\
+
 
 import (
 	"crypto/rand"

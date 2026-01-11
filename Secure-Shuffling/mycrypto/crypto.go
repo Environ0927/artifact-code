@@ -635,20 +635,18 @@ func GenShareTrans(batchSize, blocksPerRow int, seeds [][]byte) []byte {
 	return delta
 }
 
-// deriveIndex: 用 seed16 和计数 j 伪随机派生索引 ∈ [0, D)
-// 通过 AesPRG 生成 4 字节随机数，再取模 D。
+
 func deriveIndex(seed16 []byte, j, D int) int {
-    // 将 j 编码为小端 uint32
+    
     cnt := make([]byte, 4)
     binary.LittleEndian.PutUint32(cnt, uint32(j))
 
-    // 拼接 seed + counter，输入 AesPRG
     nonce := append(seed16, cnt...)
 
-    // 生成 4 字节伪随机输出
+ 
     rnd := AesPRG(4, nonce)
 
-    // 取小端 uint32 值再 mod D
+ 
     val := binary.LittleEndian.Uint32(rnd)
     return int(val % uint32(D))
 }

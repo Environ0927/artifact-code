@@ -1050,9 +1050,6 @@ def _tssc_relu_aggregate_dense(
     tau_override: Optional[float] = None,
     w_max: Optional[float] = None,
 ) -> Tuple[torch.Tensor, float, float, float, int]:
-    """
-    Dense sign 的纯 PyTorch 实现，返回 (s_next, tau, median, mad, kept_count)
-    """
     d = _model_dim(net)
     if s_trust.dtype == torch.int8:
         s_ref = s_trust.to(device)
@@ -1078,7 +1075,6 @@ def _tssc_relu_aggregate_dense(
     kept = int((w > 0).sum().item())
 
     if kept == 0:
-        # 退化为无权多数表决
         acc = torch.zeros(d, dtype=torch.int32, device=device)
         for s_i in s_list:
             acc += s_i.to(torch.int32)

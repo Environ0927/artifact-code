@@ -27,7 +27,7 @@ def add_shuffle_noise(gradients, sigma: float, clip: float = 1.0):
     if sigma is None or sigma <= 0:
         return gradients
     noisy = []
-    for g_list in gradients:  # 每个客户端
+    for g_list in gradients: 
         noisy_client = []
         for g in g_list:
             noise = torch.normal(
@@ -700,7 +700,7 @@ def main(args):
                         comm_up=comm_up,
                         comm_down=comm_down,
                         asr=(test_success_rate if args.byz_type == "scaling_attack" else None),
-                        # ===== 新增 4 个核心指标 =====
+        
                         client_comp_s=avg_client_comp_s,        # 🧩
                         server_comp_s=server_comp_s,            # 🧮
                         client_up_kb=per_client_up_kb,          # 📡

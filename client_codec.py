@@ -62,11 +62,7 @@ class ClientCompressor:
     @torch.no_grad()
     def compress(self, client_id:int, round_id:int,
                  grads: List[torch.Tensor], seed_i: Optional[int]=None) -> dict:
-        """
-        grads: list[Tensor], aligned with model.parameters()
-        Returns Msg_i: {'round_id','seed_i','pairs','layer_scale','mac_tag'}
-          - pairs: List[(idx:int, bit:int{0,1})]，dense 模式下长度 = d
-        """
+       
         # Flatten -> DP: clip -> noise
         g = self._flatten(grads)
         g = self._dp_noise(self._l2_clip(g))
