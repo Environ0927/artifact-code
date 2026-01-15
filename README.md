@@ -70,9 +70,9 @@ python main.py \
 <p align="center">
   <img src="result.png" width="85%">
 </p>
-*Figure: Representative robustness behavior under Shuffle-DP. Conventional robust aggregation becomes unreliable under local noise and anonymization, while the proposed approach remains stable.*
+Convergence of RAIN under Shuffle-DP
 
-
+---
 This configuration runs a reduced-scale setup intended for verification purposes.
 It is not intended to reproduce all experimental results or configurations reported in the paper.
 
