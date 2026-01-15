@@ -45,6 +45,11 @@ The code has been tested with the following environment:
 Dependencies can be installed via:
 ```bash
 pip install -r requirements.txt
+
+Go Dependency (Optional)
+The secure shuffling component is implemented in Go and is optional for minimal verification.
+Go version: ≥ 1.18
+This component is only required for experiments involving the secure shuffling backend.
 ```
 
 ## Minimal Running Example
@@ -60,8 +65,13 @@ python main.py \
   --lr 0.02 \
   --aggregation rain \
   --gpu 1 \
-  --seed 1
  ``` 
+
+<p align="center">
+  <img src="result.png" width="85%">
+</p>
+*Figure: Representative robustness behavior under Shuffle-DP. Conventional robust aggregation becomes unreliable under local noise and anonymization, while the proposed approach remains stable.*
+
 
 This configuration runs a reduced-scale setup intended for verification purposes.
 It is not intended to reproduce all experimental results or configurations reported in the paper.
@@ -75,4 +85,8 @@ A typical execution proceeds as follows:
 4. The aggregated result is applied to update the global model.
 5. The process repeats for the specified number of iterations.
 
+
+## Notes for Reviewers
+This artifact is anonymized and provided solely for evaluation during the double-blind review process.
+Some auxiliary files or cached data may be present but are not required for minimal verification.
 This flow is intended to help reviewers navigate the codebase and understand the overall execution logic.
