@@ -70,7 +70,8 @@ python main.py \
 <p align="center">
   <img src="result.png" width="85%">
 </p>
-Convergence of RAIN under Shuffle-DP
+**Convergence of RAIN under Shuffle-DP.**  
+RAIN converges smoothly and maintains stable accuracy under local noise and anonymization, illustrating robustness in the shuffle model of differential privacy.
 
 ---
 This configuration runs a reduced-scale setup intended for verification purposes.
